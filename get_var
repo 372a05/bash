@@ -1,0 +1,17 @@
+#!/bin/bash
+## Get a variable
+
+## List of retreivable variables
+case "$1" in
+  ## "key_str") 	val=`echo value`;;	# Key/Value pair comment
+  "hostname")		val=`hostname -s`;;	# Hostname from /etc/hosts
+  "domain") 		val=`hostname -d`;;	# Localdomain from /etc/hosts
+esac
+
+# Return value or error; then exit
+if [ -z $val ]; 
+  then exit 1
+else 
+  echo $val
+  exit 0
+fi
